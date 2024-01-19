@@ -1,13 +1,13 @@
 # Standart sorting algorithms
 Решение практических заданий по курсу:  
 "Популярные алгоритмы сортировки: практический мини-курс от Codenrock".  
-<https://codenrock.com/contests/popular-sorting-algorithms-by-codenrock/>
-Статья-источник gif-анимаций:
-"Сортировки в гифках: 8 самых популярных алгоритмов".
-<https://proglib.io/p/sort-gif>
-Сравнение эффективности сортировки на разных входных данных:
-"Sorting Algorithms Animations".
-<https://www.toptal.com/developers/sorting-algorithms>
+<https://codenrock.com/contests/popular-sorting-algorithms-by-codenrock/>  
+Статья-источник gif-анимаций:  
+"Сортировки в гифках: 8 самых популярных алгоритмов".  
+<https://proglib.io/p/sort-gif>  
+Сравнение эффективности сортировки на разных входных данных:  
+"Sorting Algorithms Animations".  
+<https://www.toptal.com/developers/sorting-algorithms>  
 ## Bubble Sort (Сортировка пузырьком)
 ### Теория
 Сортировка пузырьком - это метод сортировки массива, который можно представить как следующий процесс:
