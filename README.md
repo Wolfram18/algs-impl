@@ -1,4 +1,6 @@
 # Standart sorting algorithms
+Решение практических заданий по курсу "Популярные алгоритмы сортировки: практический мини-курс от Codenrock".  
+<https://codenrock.com/contests/popular-sorting-algorithms-by-codenrock/>
 ## Bubble Sort (Сортировка пузырьком)
 ### Теория
 Сортировка пузырьком - это метод сортировки массива, который можно представить как следующий процесс:
@@ -47,3 +49,28 @@
 Ожидаемый результат(строка):  2,3,4,5,8  
 
 В этом задании есть еще 2 скрытые тестовы пары.
+
+### Код (bubble_sort.py)
+```python
+import sys
+import re
+
+def bubble_sort(numbers):
+   for step in range(len(numbers)-1):
+       for i in range(len(numbers)-1-step):
+           if numbers[i] > numbers[i+1]:             # a = x, b = y
+            numbers[i] = numbers[i] + numbers[i+1]   # a = a + b = x + y
+            numbers[i+1] = numbers[i] - numbers[i+1] # b = a - b = x + y - y = x
+            numbers[i] = numbers[i] - numbers[i+1]   # a = a - b = x + y - x = y
+   return numbers
+
+def main():
+    for line in sys.stdin: # get input strings one by one
+        sequences = re.findall(r'\b\d+\b', line) # returns sequences of numbers
+        numbers = [int(item) for item in sequences] # to integer
+        numbers = bubble_sort(numbers)
+        print(','.join(map(str, numbers))) # to string
+ 
+if __name__ == "__main__":
+    main()
+```
