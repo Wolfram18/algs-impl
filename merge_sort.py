@@ -8,7 +8,6 @@ def merge_sort(numbers):
     right = numbers[int(len(numbers)/2):]
     merge_sort(left)
     merge_sort(right)
-    
     return merger(numbers, left, right)
 
 def merger(numbers, left, right):
@@ -21,17 +20,14 @@ def merger(numbers, left, right):
             numbers[k] = right[j]
             j+=1
         k+=1
-
     while i != len(left):
         numbers[k] = left[i]
         i+=1
         k+=1
-
     while j != len(right):
         numbers[k] = right[j]
         j+=1
         k+=1
-
     return numbers
 
 def main():
