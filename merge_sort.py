@@ -4,16 +4,34 @@ import re
 def merge_sort(numbers):
     if (len(numbers) == 1):
         return numbers
-    merge_sort(numbers[0:int(len(numbers)/2)]) # left
-    merge_sort(numbers[int(len(numbers)/2):])  # right
-    numbers = selection_sort(numbers) # recursion
-    return numbers
+    left = numbers[0:int(len(numbers)/2)]
+    right = numbers[int(len(numbers)/2):]
+    merge_sort(left)
+    merge_sort(right)
     
-def selection_sort(numbers):
-    for step in range(len(numbers)-1):
-        for i in range(step, len(numbers)-1):
-            if numbers[step] > numbers[i+1]:              
-                numbers[step], numbers[i+1] = numbers[i+1], numbers[step]
+    return merger(numbers, left, right)
+
+def merger(numbers, left, right):
+    i = j = k = 0
+    while i != len(left) and j != len(right):
+        if left[i] < right[j]:
+            numbers[k] = left[i]
+            i+=1
+        else:
+            numbers[k] = right[j]
+            j+=1
+        k+=1
+
+    while i != len(left):
+        numbers[k] = left[i]
+        i+=1
+        k+=1
+
+    while j != len(right):
+        numbers[k] = right[j]
+        j+=1
+        k+=1
+
     return numbers
 
 def main():
