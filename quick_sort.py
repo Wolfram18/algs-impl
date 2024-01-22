@@ -7,7 +7,7 @@ def quick_sort(numbers):
     else:
         pivot = numbers[int(len(numbers)/2)]
     left = [n for n in numbers if n < pivot]
-    equal = [n for n in numbers if n == pivot]
+    equal = [pivot] * numbers.count(pivot)
     right = [n for n in numbers if n > pivot]
     return quick_sort(left) + equal + quick_sort(right)
 
