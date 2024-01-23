@@ -2,7 +2,7 @@ import sys
 import re
 
 def quick_sort(numbers):
-    if (len(numbers) == 1 or len(numbers) == 0):
+    if len(numbers) <= 1:
         return numbers
     else:
         pivot = numbers[int(len(numbers)/2)]
