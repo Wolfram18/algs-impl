@@ -1,4 +1,4 @@
-# Standart sorting algorithms
+# Popular sorting algorithms
 Решение практических заданий по курсу: "Популярные алгоритмы сортировки: практический мини-курс от Codenrock".  
 <https://codenrock.com/contests/popular-sorting-algorithms-by-codenrock/>   
 
