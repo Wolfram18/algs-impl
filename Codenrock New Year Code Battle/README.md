@@ -14,3 +14,17 @@
 **Пример выходных данных:** 13,18,18,15,2,15,20  
 
 ### Код ()
+```python
+import sys
+import string
+
+def main():
+    alphabet = string.ascii_lowercase  # латинский алфавит
+    for line in sys.stdin:  # get input strings one by one
+        line = line.replace(" ", "").rstrip()
+        ind_list = [alphabet.find(x) + 1 for x in line.lower()]
+        print(','.join(map(str, ind_list)))
+
+if __name__ == '__main__':
+    main()
+```
