@@ -4,6 +4,7 @@
 
 1. [Алфавит](#алфавит)
 2. [Война](#война)
+3. [Взлом двери](#взлом-двери)
 
 ## Алфавит
 ### Задание
@@ -49,3 +50,7 @@ for line in sys.stdin: # get input strings one by one
     S = (2*opponents - 2*(n -1))*n/2
     print(S) # print the answer to stdout
 ```
+
+## Взлом двери
+### Задание
+### Код ()
