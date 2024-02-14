@@ -21,15 +21,16 @@
 import sys
 import string
 
-def encode():
-    alphabet = string.ascii_lowercase  # latin alphabet
-    for line in sys.stdin:  # get input strings one by one
-        line = line.replace(" ", "").rstrip('\n')
-        ind_list = [alphabet.find(x) + 1 for x in line.lower()]
-        print(','.join(map(str, ind_list)))
+alphabet = string.ascii_lowercase  # latin alphabet
+
+def encode(line):
+    line = line.replace(" ", "").rstrip('\n')
+    ind_list = [alphabet.find(x) + 1 for x in line.lower()]
+    print(','.join(map(str, ind_list)))
 
 if __name__ == '__main__':
-    encode()
+    for line in sys.stdin:  # get input strings one by one
+        encode(line)
 ```
 
 ## Война
@@ -48,15 +49,15 @@ import math
 def sum_of_arithmetic_progression(a1, d, n):
     return (2*a1 + d*(n - 1))*n/2
 
-def warfare():
-    for line in sys.stdin: # get input strings one by one
-        opponents = float(line)
-        n = math.ceil(opponents/2) # round up
-        S = sum_of_arithmetic_progression(opponents, -2, n)
-        print(int(S)) # print the answer to stdout
+def warfare(line):
+    opponents = float(line)
+    n = math.ceil(opponents/2) # round up
+    S = sum_of_arithmetic_progression(opponents, -2, n)
+    print(int(S)) # print the answer to stdout
 
 if __name__ == '__main__':
-    warfare()
+    for line in sys.stdin: # get input strings one by one
+        warfare(line)
 ```
 
 ## Взлом двери
@@ -79,23 +80,23 @@ XXXXXXXX
 ```python
 import sys
 
-def hacking_door():
-    for line in sys.stdin:
-        res = list(filter(lambda x : x.isdigit(), line.split(",")))
-        sticks = [int(x) for x in res[:-1]]
-        length = int(res[len(res) - 1])
-        key = []
-        for i in range(length):
-            if (i+1 in sticks or i+1 == length):
-                key.append('X')
-            else:
-                key.append('0')
-        for i in range(3):
-            print(*[x for x in key], sep='')
-        print(*['X' for x in range(length)], sep='')
+def hacking_door(line):
+    res = list(filter(lambda x : x.isdigit(), line.split(",")))
+    sticks = [int(x) for x in res[:-1]]
+    length = int(res[len(res) - 1])
+    key = []
+    for i in range(length):
+        if (i+1 in sticks or i+1 == length):
+            key.append('X')
+        else:
+            key.append('0')
+    for i in range(3):
+        print(*[x for x in key], sep='')
+    print(*['X' for x in range(length)], sep='')
 
 if __name__ == '__main__':
-    hacking_door()
+    for line in sys.stdin:
+        hacking_door(line)
 ```
 ## Наивный RLE
 ### Задание
