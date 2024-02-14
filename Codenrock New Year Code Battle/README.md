@@ -146,3 +146,11 @@ if __name__ == '__main__':
     for line in sys.stdin:
         print(*[x for x in name_search(line)], sep=', ')
 ```
+## GAME OVER
+### Задание
+
+
+### Код (.py)
+```python
+
+```
