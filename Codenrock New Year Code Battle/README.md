@@ -1,6 +1,8 @@
 # Codenrock New Year Code Battle
 Решение 15 задач на алгоритмы по мотивам IT сериалов в рамках соревнования: "Codenrock New Year Code Battle".  
-<https://codenrock.com/contests/codenrock-new-year-code-battle/>
+<https://codenrock.com/contests/codenrock-new-year-code-battle/>  
+15 крутых задач в тематике сериалов «Мир Дикого Запада», «Мистер Робот», «Кремниевая Долина» и других: "IT Show Code Battle".  
+<https://codenrock.com/contests/it-show-code-battle/>
 
 1. [Алфавит](#алфавит)
 2. [Война](#война)
