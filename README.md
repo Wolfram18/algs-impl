@@ -5,7 +5,7 @@
   <https://codenrock.com/contests/codenrock-new-year-code-battle/>  
   IT Show Code Battle (песочница)  
   <https://codenrock.com/contests/it-show-code-battle/>
-- Cosmic Code 2023
+- Cosmic Code 2023  
   <https://codenrock.com/contests/cosmic-code-2023/>
-- Халява, приди!
+- Халява, приди!  
   <https://codenrock.com/contests/halyava-pridi/>
