@@ -11,6 +11,7 @@
 5. [Имя Фамилия](#имя-фамилия)
 6. [GAME OVER](#game-over)
 7. [Литорея](#литорея)
+8. [Шифр четырех квадратов](#шифр-четырех-квадратов)
 
 ## Алфавит
 ### Задание
@@ -270,4 +271,59 @@ def encode(line):
 if __name__ == '__main__':
     for line in sys.stdin:
         print(encode(line))
+```
+
+## Шифр четырех квадратов
+### Задание
+Шифр четырех квадратов использует 4 квадратных матрицы, размером зависящих от количества букв в алфавите, например, 5х5 в английском языке. Две из них заполняются алфавитом в стандартном порядке. Чтобы добиться подходящего размера либо «I» и «J» объединяются в одной клетке, либо «Q» опускается. В две оставшиеся таблицы помещаются ключевые слова в верхней строке слева направо. Потом в оставшиеся ячейки матрицы записываются по порядку символы алфавита, не встречающиеся в ключевом слове.  
+
+Для шифрования необходимо выполнить следующие пункты:
+1. Разделить сообщение на биграммы: *ATTACK AT DAWN = AT TA CK AT DA WN*
+2. По очереди найти их в левом верхнем и правом нижнем квадрате. Например, *AT*.
+3. Комплементарно найденным буквам выбрать другие 2 буквы из правого верхнего и левого нижнего квадратов — *PM*. При этом все четыре буквы должны находиться в вершинах прямоугольника. Полученную пару букв помещают в шифр слева направо.
+4. Повторить для всех пар букв, содержащихся в сообщении. Если сообщение состоит из нечетного количества букв последнюю букву в кодируемом сообщении оставляем как есть. 
+5. В итоге получается зашифрованное сообщение: *PM MU TB PM CU XH = PMMUTBPMCUXH*
+
+![four_squares.png](./img/four_squares.png)
+
+**Входные данные:** шифруемая строка, длиной до 100 символов, на латинице в верхнем регистре  
+**Пример входных данных:** I WANTED TO SAVE THE WORLD  
+**Выходные данные:** зашифрованная строка  
+**Пример выходных данных:** GYIFUUPPHPCVPQBGYHMHD  
+
+### Код (littera.py)
+```python
+import sys
+import string
+import re
+
+def get_key_alph(alphabet, key_word):
+    for c in alphabet:
+        if c not in key_word:
+            key_word += c
+    return key_word
+
+def encode(mes_input, alphabet, key_alph):
+    mes_output = ""
+    pos = 0
+    while pos < len(mes_input):
+        if pos+1 < len(mes_input):
+            idx11 = alphabet.find(mes_input[pos])
+            idx22 = alphabet.find(mes_input[pos+1])
+            idx12 = idx11//5*5 + idx22%5
+            idx21 = idx22//5*5 + idx11%5
+            mes_output += key_alph[0][idx12]
+            mes_output += key_alph[1][idx21]
+        else:
+            mes_output += mes_input[pos]
+        pos += 2
+    return mes_output
+
+if __name__ == '__main__':
+    alphabet = string.ascii_uppercase.replace('J','')
+    key_alph1 = get_key_alph(alphabet, "CRIPTOGAF")
+    key_alph2 = get_key_alph(alphabet, "SEGURT")
+    for line in sys.stdin:
+        mes_input = re.sub(r"[\sJ]", "", line)
+        print(encode(mes_input, alphabet, (key_alph1, key_alph2)))
 ```
