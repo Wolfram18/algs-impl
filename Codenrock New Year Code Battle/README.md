@@ -258,7 +258,7 @@ def mirror_replace(c, init):
 
 def encode(line):
     code = ""
-    for c in line:
+    for c in line.replace('ё','е').replace('Ё','Е'):
         if c.isupper():
             code += mirror_replace(c, ord('А'))
         elif c.islower():
