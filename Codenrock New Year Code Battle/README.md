@@ -347,14 +347,14 @@ if __name__ == '__main__':
 ```python
 import sys
 
-def get_cycle_list(line):
-    return [line[i+1:]+line[:i+1] for i in range(len(line))]
+def transformation(input):
+    cycle_list = sorted([input[i+1:]+input[:i+1] for i in range(len(input))])
+    output = ""
+    for s in cycle_list:
+        output += s[len(s)-1]
+    return output
 
 if __name__ == '__main__':
     for line in sys.stdin:
-        cycle_list = get_cycle_list(line[:-1])
-        output = ""
-        for s in cycle_list:
-            #output += cycle_list[len(line)-2]
-        print(output)
+        print(transformation(line[:-1]))
 ```
