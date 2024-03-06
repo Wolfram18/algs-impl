@@ -263,7 +263,7 @@ def encode(line):
             code += mirror_replace(c, ord('А'))
         elif c.islower():
             code += mirror_replace(c, ord('а'))
-        else:
+        else: #elif c == ' ':
             code += c
     return code
             
