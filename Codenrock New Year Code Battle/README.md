@@ -345,5 +345,16 @@ if __name__ == '__main__':
 
 ### Код (burrows_wheeler.py)
 ```python
+import sys
 
+def get_cycle_list(line):
+    return [line[i+1:]+line[:i+1] for i in range(len(line))]
+
+if __name__ == '__main__':
+    for line in sys.stdin:
+        cycle_list = get_cycle_list(line[:-1])
+        output = ""
+        for s in cycle_list:
+            #output += cycle_list[len(line)-2]
+        print(output)
 ```
