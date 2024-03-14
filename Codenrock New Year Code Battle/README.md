@@ -480,8 +480,32 @@ if __name__ == '__main__':
 
 ### Код (dialogue_tree.py)
 ```python
+import sys
+import re
+    
+def dialogue_count(graph, start, current, total):
+    current += 1
+    if graph.get(start,None) == None:
+        if current >= 6:
+            return total + 1
+    else:
+        for node in graph[start]:
+            total = dialogue_count(graph, node, current, total)
+    return total
 
+def build_graph(data):
+    nodes = data.split("\n")
+    graph = {}
+    for node in nodes:
+        graph[re.split(":|,", node)[0]] = set(re.split(":|,", node)[1:])
+    return graph
+
+if __name__ == '__main__':
+    data = ""
+    for line in sys.stdin: 
+        data += line
+    print(dialogue_count(build_graph(data), '1', 0, 0))
 ```
 
-### Диалоговое дерево
+### 
 ## Задание
