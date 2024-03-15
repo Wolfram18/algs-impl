@@ -1,4 +1,4 @@
-# Implementing a few algorithms with python from the Codenrock platform
+# Implementing a few algorithms from the Codenrock platform
 - Популярные алгоритмы сортировки: практический мини-курс от Codenrock  
   <https://codenrock.com/contests/popular-sorting-algorithms-by-codenrock/>
 - Codenrock New Year Code Battle  
